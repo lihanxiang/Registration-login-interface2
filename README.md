@@ -2,7 +2,7 @@
 
 ### Version 0.1
 
-使用 SSM 框架来对原先的 [Registration-login-interface](https://github.com/lihanxiang/Registration-login-interface) 进行重构，页面做细微改动，后台使用框架，来达到同样的效果：
+使用 SSM 框架来对原先的 [Registration-login-interface](https://github.com/lihanxiang/Registration-login-interface) 进行重构，历时两天，页面做细微改动，后台使用框架，来达到同样的效果：
 
 ![](https://upload-images.jianshu.io/upload_images/3426615-c1638bca24a9db97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
