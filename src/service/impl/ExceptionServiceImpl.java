@@ -4,8 +4,10 @@ import config.exception.UserException;
 import domain.User;
 import mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import service.ExceptionService;
 
+@Service
 public class ExceptionServiceImpl implements ExceptionService {
 
     private final UserMapper userMapper;
@@ -55,6 +57,17 @@ public class ExceptionServiceImpl implements ExceptionService {
         }
         if(!user.getPassword().equals(db_user.getPassword())){
             throw new UserException("密码错误");
+        }
+    }
+
+    @Override
+    public void verifyCodeException(String inputVerifyCode, String code) throws UserException {
+        if (inputVerifyCode == null || inputVerifyCode.trim().isEmpty()){
+            throw new UserException("验证码不能为空");
+        } else if (inputVerifyCode.length() != 4){
+            throw new UserException("验证码长度应为 4 位");
+        } else if (!inputVerifyCode.equals(code)){
+            throw new UserException("验证码错误");
         }
     }
 }
