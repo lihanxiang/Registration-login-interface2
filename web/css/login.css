@@ -17,7 +17,7 @@ body{
     width: 98%;
     height: 98%;
     background-image: url("/image/background.jpg");
-
+    background-size: 100%;
 }
 .button{
     letter-spacing: 1px;
