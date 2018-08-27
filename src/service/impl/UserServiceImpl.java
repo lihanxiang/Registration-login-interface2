@@ -12,13 +12,16 @@ import util.VerifyCode;
 @Service
 public class UserServiceImpl implements UserService{
 
-    @Autowired
-    private UserMapper userMapper;
+    private final UserMapper userMapper;
+
+    private final ExceptionService exceptionService;
 
     @Autowired
-    private ExceptionService exceptionService;
+    public UserServiceImpl(UserMapper userMapper, ExceptionService exceptionService) {
+        this.userMapper = userMapper;
+        this.exceptionService = exceptionService;
+    }
 
-    //如果注册成功，就将信息添加至数据库
     public void addUser(User user) throws UserException {
         //先判断用户的输入是否有错
         exceptionService.addUserException1(user);

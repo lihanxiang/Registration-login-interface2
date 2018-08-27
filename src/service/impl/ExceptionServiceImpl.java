@@ -17,6 +17,7 @@ public class ExceptionServiceImpl implements ExceptionService {
         this.userMapper = userMapper;
     }
 
+    //先判断输入格式是否有误
     public void addUserException1(User user) throws UserException{
         if (user.getUsername() == null || user.getUsername().trim().isEmpty()){
             throw new UserException("用户名不能为空");
@@ -39,6 +40,7 @@ public class ExceptionServiceImpl implements ExceptionService {
         }
     }
 
+    //再判断输入的信息是否已被注册
     public void addUserException2(User user) throws UserException{
         //这三者都必须是唯一的
         if (userMapper.findUserByName(user.getUsername()) != null){
@@ -50,6 +52,7 @@ public class ExceptionServiceImpl implements ExceptionService {
         }
     }
 
+    //登入检测
     public void loginException(User user, User db_user) throws UserException {
 
         if(db_user == null){
@@ -60,6 +63,7 @@ public class ExceptionServiceImpl implements ExceptionService {
         }
     }
 
+    //验证码检测
     @Override
     public void verifyCodeException(String inputVerifyCode, String code) throws UserException {
         if (inputVerifyCode == null || inputVerifyCode.trim().isEmpty()){
