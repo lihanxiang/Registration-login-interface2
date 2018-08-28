@@ -5,6 +5,8 @@ public class User {
     private String password;
     private String phone;
     private String email;
+    private String gender;
+    private String description;
     private String verifyCode;
 
     /*public User(String username, String password, String phone, String email){
@@ -40,6 +42,20 @@ public class User {
     }
     public String getEmail() {
         return email;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+    public String getGender() {
+        return gender;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+    public String getDescription() {
+        return description;
     }
 
     public void setVerifyCode(String verifyCode) {
