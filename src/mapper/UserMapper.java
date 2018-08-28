@@ -7,4 +7,6 @@ public interface UserMapper {
     User findUserByName(String username);
     User findUserByPhone(String phone);
     User findUserByEmail(String email);
+    User showInfo(String username);
+    void setUserInfo(User user);
 }
