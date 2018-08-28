@@ -23,10 +23,12 @@
 
 数据库信息（db.properties)：
 
+```
 jdbc.driver = com.mysql.jdbc.Driver
 jdbc.url = jdbc:mysql://localhost:3306/user
 jdbc.username = xxx（你自己的用户名）
 jdbc.password = xxx（你自己的密码）
+```
 
 spring-mvc.xml:
 
@@ -135,12 +137,14 @@ spring-mybatis.xml:
 
 自定义的异常是调用父类方法来实现的，因用户注册或登陆时输入有误而抛出
 
+```
 public class UserException extends Exception {
     //自定义异常
     public UserException(String message) {
         super(message);
     }
 }
+```
 
 #### 6. 映射器
 
