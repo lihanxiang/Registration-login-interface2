@@ -74,4 +74,22 @@ public class ExceptionServiceImpl implements ExceptionService {
             throw new UserException("验证码错误");
         }
     }
+
+    //重置信息检测，关键信息不能为空
+    @Override
+    public void setInfoException(User user) throws UserException {
+        if (user.getPhone() == null || user.getPhone().trim().isEmpty()){
+            throw new UserException("电话号码不能为空");
+        } else if (user.getEmail() == null || user.getEmail().trim().isEmpty()){
+            throw new UserException("邮箱不能为空");
+        }
+    }
+
+    //用户状态检测，如果在 Session 中未找到有用户登陆，就抛出异常
+    @Override
+    public void statusException(String username) throws UserException {
+        if (username == null){
+            throw new UserException("请先登录");
+        }
+    }
 }

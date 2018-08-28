@@ -35,4 +35,30 @@ public class UserServiceImpl implements UserService{
         User db_user = userMapper.findUserByName(user.getUsername());
         exceptionService.loginException(user, db_user);
     }
+
+    //显示用户信息
+    @Override
+    public User showInfo(String username) {
+        return userMapper.showInfo(username);
+    }
+
+    //显示当前登录状态
+    @Override
+    public String getStatus(String username) throws UserException {
+        exceptionService.statusException(username);
+        return username;
+    }
+
+    //修改用户信息
+    @Override
+    public void setUserInfo(User user) throws UserException{
+        exceptionService.setInfoException(user);
+        userMapper.setUserInfo(user);
+    }
+
+    //得到验证码
+    @Override
+    public void verifyCode(String userCode, String verifyCode) throws UserException{
+        exceptionService.verifyCodeException(userCode, verifyCode);
+    }
 }
