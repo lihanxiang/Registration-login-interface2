@@ -39,9 +39,8 @@ public class UserController {
 
     @RequestMapping("/addUser")
     public ModelAndView addUser(User user, HttpServletRequest request){
-        ModelAndView modelAndView;
         //如果下面的 try 语句块没有抛出异常，则返回 addUserSuccessful.jsp
-        modelAndView = new ModelAndView("addUserSuccessful");
+        ModelAndView modelAndView = new ModelAndView("addUserSuccessful");
         try{
             //先调用添加用户的方法，看看有没有因为不符规定的输入而导致异常抛出
             userService.addUser(user);
@@ -49,7 +48,7 @@ public class UserController {
             exceptionService.verifyCodeException(request.getParameter("verifyCode"), verifyCode.getText());
         } catch (UserException e){
             //如果捕获异常，就带着异常信息返回注册界面
-            modelAndView = new ModelAndView("addUser");
+            modelAndView.setViewName("addUser");
             modelAndView.addObject("message", e.getMessage());
         }
         return modelAndView;
@@ -61,16 +60,20 @@ public class UserController {
         return new ModelAndView("login");
     }
 
-    //登陆的逻辑和上面是一样的
+    //登录的逻辑和上面是一样的
     @RequestMapping("/login")
     public ModelAndView login(User user, HttpServletRequest request) {
-        ModelAndView modelAndView;
-        modelAndView = new ModelAndView("loginSuccessful");
+        ModelAndView modelAndView = new ModelAndView("main");
         try {
             userService.login(user);
-            exceptionService.verifyCodeException(request.getParameter("verifyCode"), verifyCode.getText());
+            userService.verifyCode(request.getParameter("verifyCode"), verifyCode.getText());
+            //创建 Session，保持登录状态
+            request.getSession().setAttribute("username", user.getUsername());
+            //在模型中添加对象，用于 JSP 读取
+            modelAndView.addObject("username", request.getSession().getAttribute("username"));
         } catch (UserException e){
-            modelAndView = new ModelAndView("login");
+            //如果未登录成功，就重新登录
+            modelAndView.setViewName("login");
             modelAndView.addObject("message", e.getMessage());
         }
         return modelAndView;
@@ -86,5 +89,52 @@ public class UserController {
         BufferedImage image = verifyCode.getImage();
         //输出
         verifyCode.output(image, response.getOutputStream());
+    }
+
+    //登出账户，不需要具体用户名称，直接废除 session 就行
+    @RequestMapping("/logout")
+    public ModelAndView logout(HttpServletRequest request){
+        request.getSession().invalidate();
+        return new ModelAndView("login").addObject("message", "已登出");
+    }
+
+    //查看用户状态，显示是哪个用户在登录，如果没有登录的用户，就会提示你先登录
+    @RequestMapping("/userStatus")
+    public ModelAndView userState(HttpServletRequest request){
+        ModelAndView modelAndView = new ModelAndView("userStatus");
+        try {
+            modelAndView.addObject("username",
+                    userService.getStatus((String)request.getSession().getAttribute("username")));
+        } catch (UserException e){
+            modelAndView.addObject("message", e.getMessage());
+        }
+        return modelAndView;
+    }
+
+    //显示用户信息
+    @RequestMapping("showInfo")
+    public ModelAndView showInfo(HttpServletRequest request){
+        return new ModelAndView("userInfo")
+                .addObject("user", userService.showInfo(
+                        ((String)request.getSession().getAttribute("username"))));
+    }
+
+    //对用户信息进行修改
+    @RequestMapping("setUserInfo")
+    public ModelAndView setUserInfo(User user){
+        ModelAndView modelAndView = new ModelAndView("userInfo");
+        try {
+            userService.setUserInfo(user);
+            //一秒之后跳转
+            Thread.sleep(1000);
+            modelAndView.setViewName("main");
+            //设置提示信息
+            modelAndView.addObject("message", "修改成功");
+        } catch (UserException e){
+            modelAndView.addObject("message", e.getMessage());
+        } catch (InterruptedException e){
+            e.printStackTrace();
+        }
+        return modelAndView;
     }
 }
