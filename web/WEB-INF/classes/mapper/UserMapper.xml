@@ -5,8 +5,13 @@
 <mapper namespace="mapper.UserMapper">
     <insert id="addUser" parameterType="domain.User">
       INSERT INTO user(username,password,phone,email)
-      VALUES (#{username}, #{password}, #{phone}, #{email})
+      VALUES (#{username}, #{password}, #{phone}, #{email});
     </insert>
+
+    <select id="showInfo" parameterType="String" resultType="domain.User">
+        SELECT * FROM user
+        WHERE username = #{username}
+    </select>
 
     <select id="findUserByName" parameterType="String" resultType="domain.User">
         SELECT * FROM user WHERE username = #{username}
@@ -19,4 +24,10 @@
     <select id="findUserByEmail" parameterType="String" resultType="domain.User">
         SELECT * FROM user WHERE email = #{email}
     </select>
+
+    <update id="setUserInfo" parameterType="domain.User">
+        UPDATE user SET phone = #{phone}, email = #{email},
+        gender = #{gender}, description = #{description}
+        WHERE username = #{username}
+    </update>
 </mapper>
