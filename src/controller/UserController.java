@@ -4,6 +4,7 @@ import domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import config.exception.UserException;
 import service.ExceptionService;
@@ -12,6 +13,7 @@ import util.VerifyCode;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
@@ -125,15 +127,12 @@ public class UserController {
         ModelAndView modelAndView = new ModelAndView("userInfo");
         try {
             userService.setUserInfo(user);
-            //一秒之后跳转
-            Thread.sleep(1000);
-            modelAndView.setViewName("main");
             //设置提示信息
             modelAndView.addObject("message", "修改成功");
+            //跳转
+            modelAndView.setViewName("main");
         } catch (UserException e){
             modelAndView.addObject("message", e.getMessage());
-        } catch (InterruptedException e){
-            e.printStackTrace();
         }
         return modelAndView;
     }
