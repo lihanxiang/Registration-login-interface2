@@ -6,20 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="47cf54b0-c6c3-415f-935b-5a650c9cc0fa" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Registration_login_interface2_war_exploded/WEB-INF/classes/mapper/UserMapper.xml" afterPath="$PROJECT_DIR$/out/artifacts/Registration_login_interface2_war_exploded/WEB-INF/classes/mapper/UserMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Registration_login_interface2_war_exploded/WEB-INF/jsp/addUser.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Registration_login_interface2_war_exploded/WEB-INF/jsp/addUser.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Registration_login_interface2_war_exploded/WEB-INF/jsp/addUserSuccessful.jsp" afterPath="$PROJECT_DIR$/out/artifacts/Registration_login_interface2_war_exploded/WEB-INF/jsp/addUserSuccessful.jsp" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Registration_login_interface2_war_exploded/WEB-INF/jsp/loginSuccessful.jsp" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Registration_login_interface2_war_exploded/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/out/artifacts/Registration_login_interface2_war_exploded/WEB-INF/web.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Registration_login_interface2_war_exploded/css/register.css" afterPath="" />
-      <change beforePath="$PROJECT_DIR$/src/controller/UserController.java" afterPath="$PROJECT_DIR$/src/controller/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/src/mapper/UserMapper.xml" afterPath="$PROJECT_DIR$/src/mapper/UserMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/mapper/UserMapper.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/mapper/UserMapper.xml" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/addUser.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/addUser.jsp" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/jsp/addUserSuccessful.jsp" afterPath="$PROJECT_DIR$/web/WEB-INF/jsp/addUserSuccessful.jsp" />
-    </list>
+    <list default="true" id="47cf54b0-c6c3-415f-935b-5a650c9cc0fa" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -33,11 +20,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="UserController.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/controller/UserController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-240">
-              <caret line="110" column="62" lean-forward="true" selection-start-line="110" selection-start-column="62" selection-end-line="110" selection-end-column="62" />
+            <state relative-caret-position="570">
+              <caret line="132" column="45" lean-forward="false" selection-start-line="132" selection-start-column="45" selection-end-line="132" selection-end-column="45" />
               <folding />
             </state>
           </provider>
@@ -86,8 +73,18 @@
       <file leaf-file-name="userInfo.jsp" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/userInfo.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="740">
-              <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
+            <state relative-caret-position="370">
+              <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="userStatus.jsp" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/userStatus.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="407">
+              <caret line="11" column="70" lean-forward="false" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
               <folding />
             </state>
           </provider>
@@ -569,12 +566,12 @@
       <workItem from="1535423555919" duration="11094000" />
       <workItem from="1535501099086" duration="3022000" />
       <workItem from="1535504137193" duration="6549000" />
-      <workItem from="1535587034013" duration="1003000" />
+      <workItem from="1535587034013" duration="2597000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="69193000" />
+    <option name="totallyTimeSpent" value="70787000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2391" y="-9" width="1618" height="1298" extended-state="6" />
@@ -846,14 +843,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/userStatus.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="11" column="70" lean-forward="false" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/mapper/UserMapper.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="368">
@@ -874,14 +863,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="37">
           <caret line="2" column="19" lean-forward="false" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/userInfo.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="740">
-          <caret line="20" column="64" lean-forward="false" selection-start-line="20" selection-start-column="64" selection-end-line="20" selection-end-column="64" />
           <folding />
         </state>
       </provider>
@@ -936,8 +917,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/controller/UserController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-240">
-          <caret line="110" column="62" lean-forward="true" selection-start-line="110" selection-start-column="62" selection-end-line="110" selection-end-column="62" />
+        <state relative-caret-position="570">
+          <caret line="132" column="45" lean-forward="false" selection-start-line="132" selection-start-column="45" selection-end-line="132" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/userInfo.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="370">
+          <caret line="10" column="6" lean-forward="false" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/WEB-INF/jsp/userStatus.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="407">
+          <caret line="11" column="70" lean-forward="false" selection-start-line="11" selection-start-column="70" selection-end-line="11" selection-end-column="70" />
           <folding />
         </state>
       </provider>
