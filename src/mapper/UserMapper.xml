@@ -9,8 +9,7 @@
     </insert>
 
     <select id="showInfo" parameterType="String" resultType="domain.User">
-        SELECT *
-        FROM user
+        SELECT * FROM user
         WHERE username = #{username}
     </select>
 
