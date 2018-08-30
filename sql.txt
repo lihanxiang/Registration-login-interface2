@@ -1,0 +1,1 @@
+alter table user add gender varchar(10), add description varchar(200);
