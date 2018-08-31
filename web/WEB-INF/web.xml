@@ -10,6 +10,9 @@
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
+
+
+
     <servlet>
         <servlet-name>dispatcher</servlet-name>
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -22,6 +25,7 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.action</url-pattern>
     </servlet-mapping>
+
     <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
@@ -30,8 +34,19 @@
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
+    <filter>
+        <filter-name>loginFilter</filter-name>
+        <filter-class>filter.LoginFilter</filter-class>
+    </filter>
+
     <filter-mapping>
         <filter-name>encodingFilter</filter-name>
         <url-pattern>*.action</url-pattern>
+    </filter-mapping>
+    <filter-mapping>
+        <filter-name>loginFilter</filter-name>
+        <url-pattern>/showInfo.action</url-pattern>
+        <url-pattern>/userStatus.action</url-pattern>
+        <url-pattern>/setUserInfo.action</url-pattern>
     </filter-mapping>
 </web-app>
