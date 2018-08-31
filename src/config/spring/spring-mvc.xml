@@ -21,4 +21,15 @@
     <!-- 这两行代码是为了不让静态资源被 servlet 拦截 -->
     <mvc:resources mapping="/image/**" location="image"/>
     <mvc:resources mapping="../../css/**" location="css"/>
+    
+    <!-- 如果使用拦截器，就把这注释去掉
+    <mvc:interceptors>
+        <mvc:interceptor>
+            <mvc:mapping path="/userStatus.action"/>
+            <mvc:mapping path="/showInfo.action"/>
+            <mvc:mapping path="/setUserInfo.action"/>
+            <bean class="interceptor.LoginInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
+    -->
 </beans>
