@@ -1,19 +1,17 @@
 package controller;
 
+import config.exception.UserException;
 import domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
-import config.exception.UserException;
 import service.ExceptionService;
 import service.UserService;
 import util.VerifyCode;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 
@@ -102,14 +100,10 @@ public class UserController {
 
     //查看用户状态，显示是哪个用户在登录，如果没有登录的用户，就会提示你先登录
     @RequestMapping("/userStatus")
-    public ModelAndView userState(HttpServletRequest request){
+    public ModelAndView userStatus(HttpServletRequest request){
         ModelAndView modelAndView = new ModelAndView("userStatus");
-        try {
-            modelAndView.addObject("username",
-                    userService.getStatus((String)request.getSession().getAttribute("username")));
-        } catch (UserException e){
-            modelAndView.addObject("message", e.getMessage());
-        }
+        modelAndView.addObject("username",
+                userService.getStatus((String)request.getSession().getAttribute("username")));
         return modelAndView;
     }
 

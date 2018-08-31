@@ -18,7 +18,7 @@ public class ExceptionServiceImpl implements ExceptionService {
     }
 
     //先判断输入格式是否有误
-    public void addUserException1(User user) throws UserException{
+    public void addUserException1(User user) throws UserException {
         if (user.getUsername() == null || user.getUsername().trim().isEmpty()){
             throw new UserException("用户名不能为空");
         }else if (user.getUsername().length() < 5 || user.getUsername().length() > 15){
@@ -41,7 +41,7 @@ public class ExceptionServiceImpl implements ExceptionService {
     }
 
     //再判断输入的信息是否已被注册
-    public void addUserException2(User user) throws UserException{
+    public void addUserException2(User user) throws UserException {
         //这三者都必须是唯一的
         if (userMapper.findUserByName(user.getUsername()) != null){
             throw new UserException("该用户名已被注册");
@@ -82,14 +82,6 @@ public class ExceptionServiceImpl implements ExceptionService {
             throw new UserException("电话号码不能为空");
         } else if (user.getEmail() == null || user.getEmail().trim().isEmpty()){
             throw new UserException("邮箱不能为空");
-        }
-    }
-
-    //用户状态检测，如果在 Session 中未找到有用户登陆，就抛出异常
-    @Override
-    public void statusException(String username) throws UserException {
-        if (username == null){
-            throw new UserException("请先登录");
         }
     }
 }

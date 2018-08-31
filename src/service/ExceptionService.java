@@ -16,6 +16,4 @@ public interface ExceptionService {
     void verifyCodeException(String input_code, String code) throws UserException;
 
     void setInfoException(User user) throws UserException;
-
-    void statusException(String username) throws UserException;
 }

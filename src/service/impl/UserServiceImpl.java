@@ -7,10 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import service.ExceptionService;
 import service.UserService;
-import util.VerifyCode;
 
 @Service
-public class UserServiceImpl implements UserService{
+public class UserServiceImpl implements UserService {
 
     private final UserMapper userMapper;
 
@@ -44,21 +43,20 @@ public class UserServiceImpl implements UserService{
 
     //显示当前登录状态
     @Override
-    public String getStatus(String username) throws UserException {
-        exceptionService.statusException(username);
+    public String getStatus(String username) {
         return username;
     }
 
     //修改用户信息
     @Override
-    public void setUserInfo(User user) throws UserException{
+    public void setUserInfo(User user) throws UserException {
         exceptionService.setInfoException(user);
         userMapper.setUserInfo(user);
     }
 
     //得到验证码
     @Override
-    public void verifyCode(String userCode, String verifyCode) throws UserException{
+    public void verifyCode(String userCode, String verifyCode) throws UserException {
         exceptionService.verifyCodeException(userCode, verifyCode);
     }
 }
