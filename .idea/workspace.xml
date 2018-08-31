@@ -7,18 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="47cf54b0-c6c3-415f-935b-5a650c9cc0fa" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/filter/LoginFilter.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/interceptor/LoginInterceptor.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/Registration_login_interface2_war_exploded/WEB-INF/classes/config/spring/spring-mvc.xml" afterPath="$PROJECT_DIR$/out/artifacts/Registration_login_interface2_war_exploded/WEB-INF/classes/config/spring/spring-mvc.xml" />
-      <change beforePath="$PROJECT_DIR$/src/config/spring/spring-mvc.xml" afterPath="$PROJECT_DIR$/src/config/spring/spring-mvc.xml" />
-      <change beforePath="$PROJECT_DIR$/src/controller/UserController.java" afterPath="$PROJECT_DIR$/src/controller/UserController.java" />
-      <change beforePath="$PROJECT_DIR$/src/service/ExceptionService.java" afterPath="$PROJECT_DIR$/src/service/ExceptionService.java" />
-      <change beforePath="$PROJECT_DIR$/src/service/UserService.java" afterPath="$PROJECT_DIR$/src/service/UserService.java" />
-      <change beforePath="$PROJECT_DIR$/src/service/impl/ExceptionServiceImpl.java" afterPath="$PROJECT_DIR$/src/service/impl/ExceptionServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/src/service/impl/UserServiceImpl.java" afterPath="$PROJECT_DIR$/src/service/impl/UserServiceImpl.java" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/classes/config/spring/spring-mvc.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/classes/config/spring/spring-mvc.xml" />
-      <change beforePath="$PROJECT_DIR$/web/WEB-INF/web.xml" afterPath="$PROJECT_DIR$/web/WEB-INF/web.xml" />
+      <change beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -33,12 +22,25 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file leaf-file-name="spring-mvc.xml" pinned="false" current-in-tab="true">
+      <file leaf-file-name="spring-mvc.xml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/config/spring/spring-mvc.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="37">
               <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
               <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="4662">
+                <caret line="126" column="26" lean-forward="false" selection-start-line="126" selection-start-column="26" selection-end-line="126" selection-end-column="26" />
+                <folding />
+              </first_editor>
+              <second_editor />
             </state>
           </provider>
         </entry>
@@ -172,6 +174,7 @@
         <option value="$PROJECT_DIR$/src/service/UserService.java" />
         <option value="$PROJECT_DIR$/src/service/impl/UserServiceImpl.java" />
         <option value="$PROJECT_DIR$/src/config/spring/spring-mvc.xml" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -582,12 +585,12 @@
       <workItem from="1535501099086" duration="3022000" />
       <workItem from="1535504137193" duration="6549000" />
       <workItem from="1535587034013" duration="2597000" />
-      <workItem from="1535716969525" duration="468000" />
+      <workItem from="1535716969525" duration="736000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="71255000" />
+    <option name="totallyTimeSpent" value="71523000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="2391" y="-9" width="1618" height="1298" extended-state="7" />
@@ -639,13 +642,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/config/db.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/config/spring/spring-mybatis.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="185">
@@ -955,6 +951,17 @@
         <state relative-caret-position="37">
           <caret line="24" column="24" lean-forward="false" selection-start-line="24" selection-start-column="24" selection-end-line="24" selection-end-column="24" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="4662">
+            <caret line="126" column="26" lean-forward="false" selection-start-line="126" selection-start-column="26" selection-end-line="126" selection-end-column="26" />
+            <folding />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
