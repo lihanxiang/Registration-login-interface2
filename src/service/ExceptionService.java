@@ -1,8 +1,7 @@
 package service;
 
-import config.exception.UserException;
+import exception.UserException;
 import domain.User;
-import org.springframework.stereotype.Service;
 
 public interface ExceptionService {
 

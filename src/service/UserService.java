@@ -1,10 +1,7 @@
 package service;
 
-import config.exception.UserException;
+import exception.UserException;
 import domain.User;
-import util.VerifyCode;
-
-import javax.servlet.http.HttpServletRequest;
 
 public interface UserService {
     void addUser(User user) throws UserException;

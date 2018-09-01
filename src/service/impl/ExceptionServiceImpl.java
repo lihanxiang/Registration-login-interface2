@@ -1,6 +1,6 @@
 package service.impl;
 
-import config.exception.UserException;
+import exception.UserException;
 import domain.User;
 import mapper.UserMapper;
 import org.springframework.beans.factory.annotation.Autowired;

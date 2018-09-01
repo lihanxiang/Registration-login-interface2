@@ -1,6 +1,6 @@
 package controller;
 
-import config.exception.UserException;
+import exception.UserException;
 import domain.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
