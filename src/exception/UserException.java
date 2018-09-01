@@ -1,4 +1,4 @@
-package config.exception;
+package exception;
 
 public class UserException extends Exception {
     //自定义异常
