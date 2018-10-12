@@ -59,4 +59,11 @@ public class UserServiceImpl implements UserService {
     public void verifyCode(String userCode, String verifyCode) throws UserException {
         exceptionService.verifyCodeException(userCode, verifyCode);
     }
+
+    @Override
+    public User findUserByName(String username) {
+        return userMapper.findUserByName(username);
+    }
+
+
 }
