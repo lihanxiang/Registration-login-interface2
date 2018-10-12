@@ -1,7 +1,13 @@
 package controller;
 
+import com.sun.image.codec.jpeg.JPEGCodec;
+import com.sun.image.codec.jpeg.JPEGImageEncoder;
 import exception.UserException;
 import domain.User;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.subject.Subject;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -60,20 +66,22 @@ public class UserController {
         return new ModelAndView("login");
     }
 
-    //登录的逻辑和上面是一样的
     @RequestMapping("/login")
-    public ModelAndView login(User user, HttpServletRequest request) {
+    public ModelAndView login(User user, HttpServletRequest request){
         ModelAndView modelAndView = new ModelAndView("main");
+        //得到 Subject
+        Subject subject = SecurityUtils.getSubject();
+        //获取 token，用于验证
+        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(user.getUsername(), user.getPassword());
         try {
-            userService.login(user);
+            //先检测关于验证码的输入
             userService.verifyCode(request.getParameter("verifyCode"), verifyCode.getText());
-            //创建 Session，保持登录状态
+            //尝试登录
+            subject.login(usernamePasswordToken);
             request.getSession().setAttribute("username", user.getUsername());
-            //在模型中添加对象，用于 JSP 读取
-            modelAndView.addObject("username", request.getSession().getAttribute("username"));
-        } catch (UserException e){
-            //如果未登录成功，就重新登录
-            modelAndView.setViewName("login");
+            modelAndView.addObject("username", user.getUsername());
+        } catch (AuthenticationException | UserException e){
+            modelAndView = new ModelAndView("login");
             modelAndView.addObject("message", e.getMessage());
         }
         return modelAndView;
@@ -88,14 +96,8 @@ public class UserController {
         //得到图片
         BufferedImage image = verifyCode.getImage();
         //输出
-        verifyCode.output(image, response.getOutputStream());
-    }
-
-    //登出账户，不需要具体用户名称，直接废除 session 就行
-    @RequestMapping("/logout")
-    public ModelAndView logout(HttpServletRequest request){
-        request.getSession().invalidate();
-        return new ModelAndView("login").addObject("message", "已登出");
+        JPEGImageEncoder encoder = JPEGCodec.createJPEGEncoder(response.getOutputStream());
+        encoder.encode(image);
     }
 
     //查看用户状态，显示是哪个用户在登录，如果没有登录的用户，就会提示你先登录
