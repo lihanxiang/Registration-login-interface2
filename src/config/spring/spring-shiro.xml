@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+        <property name="securityManager" ref="securityManager"/>
+        <!-- 登录页面的地址 -->
+        <property name="loginUrl" value="/preLogin.action"/>
+        <!-- 如果在未登录的情况下访问受限页面，就跳转至此 -->
+        <property name="unauthorizedUrl" value="/preLogin.action"/>
+        <!-- 过滤链 -->
+        <property name="filterChainDefinitions">
+            <value>
+                <!-- 登录页面不拦截 -->
+                /preLogin.action = anon
+                <!-- 这 3 个和具体用户有关的页面需要拦截 -->
+                /showInfo.action = user
+                /setUserInfo.action = user
+                /userStatus.action = user
+                <!-- 登出操作 -->
+                /logout.action = logout
+            </value>
+        </property>
+    </bean>
+
+    <bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+        <property name="realm" ref="customizeRealm"/>
+    </bean>
+
+    <bean id="customizeRealm" class="shiro.CustomizeRealm"/>
+</beans>
