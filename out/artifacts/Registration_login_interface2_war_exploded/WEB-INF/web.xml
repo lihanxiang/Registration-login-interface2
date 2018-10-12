@@ -5,13 +5,11 @@
          version="4.0">
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/classes/config/spring/spring-mybatis.xml</param-value>
+        <param-value>/WEB-INF/classes/config/spring/spring-*.xml</param-value>
     </context-param>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
     </listener>
-
-
 
     <servlet>
         <servlet-name>dispatcher</servlet-name>
@@ -27,6 +25,14 @@
     </servlet-mapping>
 
     <filter>
+        <filter-name>shiro1Filter</filter-name>
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>shiro1Filter</filter-name>
+        <url-pattern>*.action</url-pattern>
+    </filter-mapping>
+    <filter>
         <filter-name>encodingFilter</filter-name>
         <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
         <init-param>
@@ -34,19 +40,8 @@
             <param-value>UTF-8</param-value>
         </init-param>
     </filter>
-    <filter>
-        <filter-name>loginFilter</filter-name>
-        <filter-class>filter.LoginFilter</filter-class>
-    </filter>
-
     <filter-mapping>
         <filter-name>encodingFilter</filter-name>
         <url-pattern>*.action</url-pattern>
-    </filter-mapping>
-    <filter-mapping>
-        <filter-name>loginFilter</filter-name>
-        <url-pattern>/showInfo.action</url-pattern>
-        <url-pattern>/userStatus.action</url-pattern>
-        <url-pattern>/setUserInfo.action</url-pattern>
     </filter-mapping>
 </web-app>

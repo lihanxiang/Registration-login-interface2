@@ -28,6 +28,5 @@
     </bean>
 
     <!-- 之后要用到的两个 Bean -->
-    <bean id="exceptionService" class="service.impl.ExceptionServiceImpl"/>
     <bean id="verifyCode" class="util.VerifyCode"/>
 </beans>
