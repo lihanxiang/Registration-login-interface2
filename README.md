@@ -34,7 +34,7 @@ Shiro 的基础知识就直接去看大佬的这一系列文章[跟我学 Shiro]
 ###### 1. 在 web.xml 中添加过滤器：
 
 ```
-	<filter>
+    <filter>
         <filter-name>shiroFilter</filter-name>
         <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>
     </filter>
@@ -49,7 +49,7 @@ DelegatingFilterProxy 只是作为代理，它提供了我们接下来写的 spr
 因为在启动时，上下文信息不止一个文件，所以这里用通配符 * 来指定 spring 包中的所有文件
 
 ```
-	<context-param>
+    <context-param>
         <param-name>contextConfigLocation</param-name>
         <param-value>/WEB-INF/classes/config/spring/spring-*.xml</param-value>
     </context-param>
@@ -60,7 +60,7 @@ DelegatingFilterProxy 只是作为代理，它提供了我们接下来写的 spr
 我们自己定义一个 Realm，继承自 AuthorizingRealm，因为我们还没有做授权的功能，这里继承 AuthenticatingRealm 也是可以的：
 
 ```
-	@Autowired
+    @Autowired
     private UserService userService;
 
     @Override
@@ -90,7 +90,7 @@ DelegatingFilterProxy 只是作为代理，它提供了我们接下来写的 spr
 这是 shiro 的配置文件，页面的拦截，登录页面的地址，以及 SecurityManager 等重要信息都在此配置：
 
 ```
-	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
         <property name="securityManager" ref="securityManager"/>
         <!-- 登录页面的地址 -->
         <property name="loginUrl" value="/preLogin.action"/>
